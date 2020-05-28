@@ -6,13 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -20,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
+    private Spinner spinnerLanguages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +37,12 @@ public class LoginActivity extends AppCompatActivity {
             goMainActivity();
         }
 
+
+
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        spinnerLanguages = findViewById(R.id.spinnerLanguages);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +53,21 @@ public class LoginActivity extends AppCompatActivity {
                 loginUser(username, password);
             }
         });
+
+        displayLanguage();
+    }
+
+    private void displayLanguage() {
+        Spinner spinner =  spinnerLanguages;
+        List<String> languages = new ArrayList<String>();
+        languages.add("English");
+        languages.add("French");
+        languages.add("Spanish");
+        languages.add("Creole (Haiti)");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, languages);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
     }
 
     private void loginUser(String username, String password) {
