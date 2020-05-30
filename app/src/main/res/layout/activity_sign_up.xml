@@ -5,16 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".LoginActivity">
-
-    <Spinner
-        android:id="@+id/spinnerLanguages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        />
+    tools:context=".SignUpActivity"
+    tools:ignore="ExtraText">
 
     <ImageView
         android:id="@+id/ivInstagram"
@@ -51,49 +43,16 @@
         android:drawableRight="@drawable/ic_visibility_off"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSignUp"
         android:layout_below="@id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/log_in"
+        android:text="Sign Up"
         android:layout_margin="10dp"
         android:background="@drawable/button_bg"
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textAllCaps="false" />
 
-    <TableRow
-        android:id="@+id/hr"
-        android:layout_above="@id/tvNoAccount"
-        android:layout_width="match_parent"
-        android:layout_height="0.8dp"
-        android:background="@color/colorGray02"
-        android:layout_marginBottom="5dp"/>
-
-
-    <TextView
-        android:id="@+id/tvNoAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/don_t_have_an_account"
-        android:textSize="18sp"
-        android:textColor="@color/colorGray02"
-        android:paddingStart="50dp"
-        android:paddingBottom="5dp"
-        android:layout_alignParentBottom="true"/>
-
-    <TextView
-        android:id="@+id/tvSigUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/sign_up"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@id/tvNoAccount"
-        android:textColor="#2196f3"
-        android:paddingBottom="5dp"
-       />
 
 </RelativeLayout>

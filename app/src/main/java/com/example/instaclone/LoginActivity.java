@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etPassword;
     private Button btnLogin;
     private Spinner spinnerLanguages;
+    private TextView tvSigUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         spinnerLanguages = findViewById(R.id.spinnerLanguages);
+        tvSigUp = findViewById(R.id.tvSigUp);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         displayLanguage();
+
+        tvSigUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+            }
+        });
     }
 
     private void displayLanguage() {
@@ -94,4 +104,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
+
 }
