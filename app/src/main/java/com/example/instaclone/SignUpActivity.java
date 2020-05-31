@@ -48,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                         else {
                             Log.e(TAG, "Issue", e);
-                            Toast.makeText(SignUpActivity.this, "Issue!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "Issue With Sign Up!!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
